@@ -1,36 +1,13 @@
 const fs = require('fs');
-const chalk = require('chalk');
-
-// Website Api
-global.APIs = {
-    xfarr: 'https://api.xfarr.com',
-};
-
-// Apikey Website Api
-global.APIKeys = {
-    'https://api.xfarr.com': 'Uc3LRsLE2d',
-};
-
-// Set your URL and API key here
-global.APIs = {
-    xfarr: {
-        baseURL: 'https://api.xfarr.com',
-        Key: 'Uc3LRsLE2d'
-    }
-};
- 
-
-// Other
-global.apikey = 'bf2d2cf29b3edc604b447983';
-global.ownername = 'ᴠᴀᴊɪʀᴀ ʀᴀᴛʜɴᴀʏᴀᴋᴀ';
-global.owner = ['94719199757','94703475691'];
-global.premium = ['94719199757','94703475691'];
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
+global.email = 'vajirarathnayaka891@gmail.com'
+global.github = 'https://github.com/VajirTech/VAJIRA-MD'
+global.location = 'Srilanka Colombo'
 global.packname = '𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚢';
 global.author = '𝙑𝘼𝙅𝙄𝙍𝘼 𝙈𝘿';
-global.caption = ' 👨‍💻 ＶＡＪＩＲＡ ＭＤ V3 👨‍💻';
-global.sessionName = 'session';
-global.prefa = ['!', '.'];
-global.sp = '✪';
 global.mess = {
     banned: '`You are *Banned* fron using commands!`',
     bangc: '`This Group is *Banned* from using Commands!`',
@@ -43,34 +20,34 @@ global.mess = {
     bot: '`Bot number user special features`',
     wait: '*Processing Your request*',
     endLimit: '`Your daily limit has expired, the limit will be reset every 12 hours`',
-};
-global.link = 'https://youtube.com/@gamingewingyt6216?si=IHmBhi2R69ao6jcG'
-global.linkGroup = 'https://chat.whatsapp.com/JNAASTo0fMo3N4luk8arve'  
-global.logo = process.env.LOGO || "https://telegra.ph/file/bb92c9c4e66b6b6045feb.jpg",        
-global.ANTI_BOT = process.env.ANTI_BOT || "false",        
-global.typemenu = 'v1' // 'v1' => 'v5'
-global.onlygroup = false // onlygroup
-global.onlypc = false
-global.AUTO_ABOUT = false
-global.limitawal = {
-    premium: 'Infinity',
-    free: 10
-};
-
-// Add anticall option
-global.config = {
-    options: {
-        antiCall: true, // Set to true for anticall functionality, false otherwise
-    },
-};
-
-// Ensure config object is defined before using it
-if (config && config.options && config.options.antiCall) {
-    let file = require.resolve(__filename);
-    fs.watchFile(file, () => {
-        fs.unwatchFile(file);
-        console.log(chalk.redBright(`Update'${__filename}'`));
-        delete require.cache[file];
-        require(file);
-    });
 }
+
+global.owner = [process.env.OWNER_NUMBER] || ['94711453097'] // Owner number , (අයිතිකරුගේ නම්බර් එක )
+
+module.exports = {    
+SESSION_ID: process.env.SESSION_ID || 'youre session id',
+POSTGRESQL_URL: process.env.POSTGRESQL_URL || 'postgres://izumimd_meje_user:0Vhm5vKGZ7ORt2FlJBQf4d6EtRdeuE8z@dpg-cn0o2imn7f5s73fa46q0-a.frankfurt-postgres.render.com/izumimd_meje',
+PREFIX:  process.env.PREFIX || ['.'] ,
+LANG:  process.env.LANG || 'SI' ,    
+ANTI_BAD: process.env.ANTI_BAD || false  ,
+AUTO_REACT:  process.env.AUTO_REACT  || false  ,    
+AUTO_TYPING:  process.env.AUTO_TYPING  || false  ,
+AUTO_RECORDING:  process.env.AUTO_RECORDING  || false  ,
+AUTO_READ:  process.env.AUTO_READ  || false  ,
+AUTO_BIO:  process.env.AUTO_BIO  || false  ,    
+ALWAYS_ONLINE:  process.env.ALWAYS_ONLINE  || false  ,            
+WORK_TYPE: process.env.WORK_TYPE || 'private'  ,
+ANTI_LINK: process.env.ANTI_LINK || false  ,
+ANTI_BOT: process.env.ANTI_BOT || false  ,
+OWNER_NUMBER: process.env.OWNER_NUMBER || '94719199757'  ,    
+ALIVE: process.env.ALIVE || `default`,
+OWNER_NAME: process.env.OWNER_NAME || 'Vajira' ,     
+AUTO_STATUS_READ:  process.env.AUTO_STATUS_READ  || false  ,    
+AUTO_VOICE:  process.env.AUTO_VOICE  || false  ,
+AUTO_STICKER: process.env.AUTO_STICKER || false  ,
+WELCOME:  process.env.WELCOME  || false ,    
+NUMBER_212_BLOCK: process.env.NUMBER_212_BLOCK || false  ,
+FOOTER: process.env.FOOTER ||  '©ＶＡＪＩＲＡ - ＭＤ - Ｖ4',
+LOGO: process.env.LOGO || `https://telegra.ph/file/03f1eccdcb525a5e1a6ad.jpg` ,
+IMAGE: process.env.IMAGE || `https://telegra.ph/file/03f1eccdcb525a5e1a6ad.jpg`     
+};

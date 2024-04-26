@@ -1,8 +1,8 @@
 {
-    "name": "ＶＡＪＩＲＡ - ＭＤ - V3 WhatsApp Bot",
+    "name": "ＶＡＪＩＲＡ - ＭＤ - Ｖ4 WhatsApp Bot",
     "description": "This is a 3ʳᵈ Party Application software for WhatsApp with Many Feature & many Commands",
-    "repository": "https://github.com/VajiraTech/VAJIRA-MD",
-    "logo": "https://telegra.ph/file/b714e9a697c2fd0794985.jpg",
+    "repository": "https://github.com/vajirabot1/VAJIRA-MD",
+    "logo": "https://telegra.ph/file/03f1eccdcb525a5e1a6ad.jpg",
     "keywords": [
         "nodejs",
         "Bot",
@@ -11,7 +11,12 @@
         "Multi Device"
     ],
     "env": {
-    "HEROKU_API_KEY": {
+        "SESSION_ID": {
+            "description": "Type the Session-ID you got from scaning QR",
+            "required": true,
+            "value": "put session id here"
+        },
+        "HEROKU_API_KEY": {
             "description": "Enter your heroku account api key",
             "required": true,
             "value": ""
@@ -21,29 +26,108 @@
             "required": true,
             "value": ""
         },
-        "MONGO_DB": {
-            "description": "your mongodb database url",
+        "NUMBER_212_BLOCK": {
+            "description": "dont change this",
             "required": true,
-            "value": "mongodb+srv://mohsin:mohsin@cluster0.iauaztt.mongodb.net/?retryWrites=true&w=majority"
+            "value": "false"
         },
-        "LOGO": {
-            "description": "Put your logo url here",
+        "PREFIX": {
+            "description": "put prefix here",
             "required": true,
-            "value": "https://telegra.ph/file/b714e9a697c2fd0794985.jpg"    
+            "value": "."      
         },
-        "TYPEMENU": {
-            "description": "choose menu type from v1 to v5",
-            "required": false,
-            "value": "v1"
-
+        "WELCOME": {
+            "description": "To turn on/off welcome/goobye message put true/false",
+            "required": true,
+            "value": "false"      
         },
-        "AUTO_BLOCK_ENABLED": {
-            "description": "Enable auto block feature for +212",
-            "required": false,
-            "value": "true"
-}
-  },
-   "buildpacks": [
+        "LANG": {
+            "description": "To put bot sinhala do not fill here. you want to put bot english put EN here",
+            "required": true
+        },
+        "OWNER-NAME": {
+            "description": "put Your name herd",
+            "required": true,
+            "value": "Vajira"      
+        },
+        "OWNER_NUMBER": {
+            "description": "put your number here",
+            "required": true,
+            "value": "94719199757"
+        },
+        "IMAGE": {
+            "description": "Put bot image url here",
+            "required": true,
+             "value": "https://telegra.ph/file/03f1eccdcb525a5e1a6ad.jpg"
+        },
+        "ANTI_BOT": {
+            "description": "put true or false here",
+            "required": true,
+            "value": "false"
+        },
+        "ANTI_LINK": {
+            "description": "put true or false here",
+            "required": true,
+            "value": "false"
+        },
+        "ANTI_BAD": {
+            "description": "put true or false here",
+            "required": true,
+            "value": "false"
+        },
+        "WORK_TYPE": {
+            "description": "Add the worktype of the Bot ( public or private )",
+            "required": true,
+            "value": "private"
+        },
+        "AUTO_VOICE": {
+            "description": "Put true or false to voice on off",
+            "required": true,
+            "value": "false"
+        },
+        "AUTO_STATUS_READ": {
+            "description": "To on auto read message",
+            "required": true,
+            "value": "false"          
+        },
+        "AUTO_TYPING": {
+            "description": "To on auto typing",
+            "required": true,
+            "value": "false"     
+        },
+        "AUTO_RECORDING": {
+            "description": "To on auto recording",
+            "required": true,
+            "value": "false"    
+        },
+        "AUTO_READ": {
+            "description": "To on read message",
+            "required": true,
+            "value": "false"  
+        },
+        "AUTO_BIO": {
+            "description": "To on auto bio",
+            "required": true,
+            "value": "false"      
+        },
+        "AUTO_REACT": {
+            "description": "To on auto auto react",
+            "required": true,
+            "value": "false"          
+        },
+        "ALWAYS_ONLINE": {
+            "description": "To on auto status view",
+            "required": true,
+            "value": "false"              
+        },
+        "AUTO_STICKER": {
+            "description": "Put true or false to sticker on off",
+            "required": true,
+            "value": "false"
+        
+        }
+    },
+    "buildpacks": [
         {
             "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
         },
@@ -69,4 +153,3 @@
         }
     }
 }
-
